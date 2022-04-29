@@ -146,11 +146,11 @@ typedef struct _OVS_CT_ZONE_LIMIT {
 } OVS_CT_ZONE_LIMIT, *POVS_CT_ZONE_LIMIT;
 
 #define CT_MAX_ENTRIES 1 << 21
-#define CT_HASH_TABLE_SIZE ((UINT32)1 << 13)  //8192
+#define CT_HASH_TABLE_SIZE ((UINT32)1 << 16)  //65536
 #define CT_HASH_TABLE_MASK (CT_HASH_TABLE_SIZE - 1)
 #define CT_INTERVAL_SEC 10000000LL //1s
-#define CT_ENTRY_TIMEOUT (2 * 60 * CT_INTERVAL_SEC)   // 2m
-#define CT_CLEANUP_INTERVAL (2 * 60 * CT_INTERVAL_SEC) // 2m
+#define CT_ENTRY_TIMEOUT (2 * 60 * CT_INTERVAL_SEC)   // 1m
+#define CT_CLEANUP_INTERVAL (2 * 60 * CT_INTERVAL_SEC) // 1m
 
 
 /* Given POINTER, the address of the given MEMBER in a STRUCT object, returns
